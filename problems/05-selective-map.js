@@ -42,10 +42,27 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 - How many times are you calling each callback function?
 *******************************************************************************/
 
-let selectiveMap = function() {
-
+let selectiveMap = function(array, cb1, cb2) {
+    let newArray = [];
+    for(let i = 0; i < array.length ; i++){
+        let element = array[i];
+        if(cb1(element)){
+            newArray.push(cb2(element));
+        }
+        else{
+            newArray.push(element);
+        }
+    }
+return newArray;
 };
-
+function isEven(n) {
+    return n % 2 === 0;
+}
+function square(n) {
+    return n * n;
+}
+console.log(selectiveMap([8, 5, 10, 4], isEven, square));
+// [ 64, 5, 100, 16 ]
 
 
 
