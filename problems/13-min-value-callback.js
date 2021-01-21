@@ -19,11 +19,12 @@ let minValueCallback = function(arr, cb) {
             smallestVal = ele;
         }
     }
-    
+
     if (cb === undefined) {
         return smallestVal;
     } else {
-        
+    return cb(smallestVal);
+
     }
 };
 
