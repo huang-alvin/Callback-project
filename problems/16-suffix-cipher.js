@@ -54,10 +54,8 @@ let suffixCipher = function(sentence, obj) {
             if( ele.endsWith(key) ){
                 return cb(ele);
             }
-            else{
-                return ele;
-            }
         }
+        return ele;
     });
 
 return arr.join(' ');
