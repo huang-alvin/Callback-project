@@ -37,10 +37,17 @@ let result6 = one(['apple', 'dog', 'food', 'cat'], function(el, idx) {
 console.log(result6);   // true
 *******************************************************************************/
 
-let one = function() {
+let one = function(array, cb ) {
+    let counter = 0;
 
+    for(let i = 0 ; i < array.length; i++ ){
+        let index = i;
+        if(cb(array[i], index)){
+            counter++;
+        }
+    }
+    return counter === 1;
 };
-
 
 
 
